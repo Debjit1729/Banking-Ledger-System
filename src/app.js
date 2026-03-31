@@ -27,6 +27,12 @@
  * Note: All routes should be prefixed with /api to follow RESTful API design principles and to allow for future expansion of the API without breaking existing routes.
  * For example, if we want to add a new route for reporting or analytics in the future, we can easily do so under the /api prefix without affecting the existing auth, account, or transaction routes.  
  */
+
+app.get("/", (req, res) => {
+    res.send("Ledger service is up and running")
+})
+
+
  app.use("/api/auth", authRouter)
  app.use("/api/accounts", accountRouter)
  app.use("/api/transactions", transactionRoutes)
